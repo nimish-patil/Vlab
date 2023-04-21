@@ -19,7 +19,11 @@ from django.urls import path
 from sentimentAnalysis import views
 
 urlpatterns = [
+    path("", views.home, name="home"),
+    path("procedure/", views.procedure, name="procedure"),
+    path("theory/", views.theory, name="theory"),
     path("simulation/", views.simulation, name="simulation"),
+    path("test/", views.test, name="test"),
     path("findSentiment/", views.findSentiment, name="findSentiment"),
     path('admin/', admin.site.urls),
 ]
