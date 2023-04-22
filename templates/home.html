@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="simulation.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/282bcc1712.js" crossorigin="anonymous"></script>    <link rel="stylesheet" href="simulation.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>AnalyZ</title>
+	<style>
+	</style>
+</head>
+<body style="min-height: 46.4vw; display: flex; flex-direction: column">
+	<!-- Navbar -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container">
+			<a class="navbar-brand" href="#">AnalyZ</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+					<a class="nav-link" aria-current="page" href="/">Home</a>
+					<a class="nav-link" href="/theory">Theory</a>
+					<a class="nav-link" href="/procedure">Procedure</a>
+					<a class="nav-link" href="/simulation">Simulation</a>
+					<a class="nav-link" href="/test">Test</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	<div class="welcome-message">
+		<p id="typing-text"></p>
+	</div>
+
+    <footer class="footer" style="margin-top: auto; background-color: #212529; color: white; padding: 50px;">
+		<div class="container">
+		  <div class="row">
+			<div class="col-md-4 ">
+			  <h4>About Us</h4>
+			  <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h5>
+			</div>
+			<div class="col-md-4">
+			  <h4>Contact Us</h4>
+			  <ul class="list-unstyled">
+				<li><i class="fa fa-envelope"></i> info@example.com</li>
+				<li><i class="fa fa-phone"></i> +1 (555) 123-4567</li>
+				<li><i class="fa fa-map-marker"></i> 123 Main St, Anytown, USA</li>
+			  </ul>
+			</div>
+			<div class="col-md-4">
+			  <h4>Follow Us</h4>
+			  <ul class="list-unstyled">
+				<li><a href="#"><i class="fa fa-facebook"></i> Facebook</a></li>
+				<li><a href="#"><i class="fa fa-twitter"></i> Twitter</a></li>
+				<li><a href="#"><i class="fa fa-instagram"></i> Instagram</a></li>
+			  </ul>
+			</div>
+		  </div>
+		</div>
+	  </footer>
+
+	<script>
+		// Function to display text one by one like typing
+		function typeWriter(text, i, fnCallback) {
+			// Check if i is less than text length
+			if (i < text.length) {
+				// Display one character at a time
+				document.getElementById("typing-text").innerHTML += text.charAt(i);
+				// Increment i by 1 and call the function recursively with a delay
+				setTimeout(function() {
+					typeWriter(text, i + 1, fnCallback)
+				}, 50);
+			} else if (typeof fnCallback == "function") {
+				// Call the callback function after the text is displayed
+				setTimeout(fnCallback, 1000);
+			}
+		}
+
+		// Call the typeWriter function with your text
+		typeWriter("Welcome to Sentiment Analysis VLab", 0, function() {
+			// Change the font size of the displayed text
+			document.getElementById("typing-text").style.fontSize = "60px";
+		});
+	</script>
+</body>
+
+</html>
